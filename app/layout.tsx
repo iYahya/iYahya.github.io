@@ -27,7 +27,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iYahya.github.io"),
+  metadataBase: new URL("https://iyahya.github.io"),
   title: "Yahia — React Native & Front-End Developer",
   description:
     "React Native and front-end developer. 8+ years, 30+ published apps. Based in Mansoura, Egypt.",

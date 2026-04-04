@@ -1,6 +1,6 @@
 # Portfolio — Yahia
 
-Static personal portfolio for **Yahia** (React Native & front-end developer). Target: **GitHub Pages** at `https://<username>.github.io/`. Layout and tone reference: [mohammedbasha.github.io](https://mohammedbasha.github.io/).
+Static personal portfolio for **Yahia** (React Native & front-end developer). Live on **GitHub Pages** at [iYahya.github.io](https://iYahya.github.io/).
 
 ## What this repo is
 

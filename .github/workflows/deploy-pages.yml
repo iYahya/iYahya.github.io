@@ -1,12 +1,16 @@
 name: Deploy to GitHub Pages
 
-# Pushes the static export in `out/` to branch `gh-pages`.
-# In repo Settings → Pages: set source to "Deploy from a branch",
-# branch `gh-pages`, folder `/ (root)`.
+# Writes the static export into docs/ on main. For user sites (iYahya.github.io),
+# GitHub serves /docs at the site root: https://iyahya.github.io/
+#
+# Settings → Pages → Build and deployment → Deploy from a branch:
+#   Branch: main   Folder: /docs   (NOT / root — that only has README)
 
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
@@ -31,4 +35,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          force_orphan: true
+          publish_branch: main
+          destination_dir: docs
+          commit_message: "deploy: GitHub Pages build [skip ci]"

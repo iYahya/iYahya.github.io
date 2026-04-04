@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yahia — React Native &amp; Front-End Developer</title>
+    <meta
+      name="description"
+      content="React Native and front-end developer. 8+ years, 30+ published apps. Based in Mansoura, Egypt."
+    />
+    <meta property="og:title" content="Yahia — Portfolio" />
+    <meta property="og:description" content="React Native and front-end developer portfolio." />
+    <meta property="og:image" content="./assets/og-image.png" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='20' font-family='system-ui,sans-serif' fill='%2300d4ff'%3EYH%3C/text%3E%3C/svg%3E" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", saved || preferred);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="#hero" aria-label="Home">{ YH }</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-lang="en" class="lang-btn" aria-pressed="true">EN</button>
+            <button type="button" data-lang="ar" class="lang-btn" aria-pressed="false">AR</button>
+          </div>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+            <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon--moon" aria-hidden="true">☽</span>
+          </button>
+          <a class="btn btn-ghost nav-cv" href="./assets/cv-yahia.pdf" download data-i18n="controls.download_cv">Download CV</a>
+        </div>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="hero" class="section hero">
+        <p class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</p>
+        <h1 class="hero-name" data-i18n="hero.name">Yahia</h1>
+        <p class="hero-title" data-i18n="hero.title">React Native &amp; Front-End Developer</p>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">8+ years · 30+ Published Apps · App Store &amp; Google Play</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects" data-i18n="hero.cta_primary">View My Work ↓</a>
+          <a class="btn btn-outline" href="./assets/cv-yahia.pdf" download data-i18n="hero.cta_secondary">Download CV</a>
+        </div>
+      </section>
+      <section id="about" class="section">
+        <h2 data-i18n="about.section_title">About</h2>
+        <p class="about-bio" data-i18n="about.bio"></p>
+      </section>
+      <section id="skills" class="section">
+        <h2 data-i18n="skills.section_title">Skills</h2>
+        <p class="muted">Section scaffold — expand with category grids per README.</p>
+      </section>
+      <section id="experience" class="section">
+        <h2 data-i18n="experience.section_title">Experience</h2>
+        <p class="muted">Section scaffold — add timeline per README.</p>
+      </section>
+      <section id="projects" class="section">
+        <h2 data-i18n="projects.section_title">Projects</h2>
+        <p class="muted">Section scaffold — add filterable cards per README.</p>
+      </section>
+      <section id="education" class="section">
+        <h2 data-i18n="education.section_title">Education</h2>
+        <p class="muted">Section scaffold — two cards per README.</p>
+      </section>
+      <section id="contact" class="section">
+        <h2 data-i18n="contact.section_title">Contact</h2>
+        <p class="contact-subtitle" data-i18n="contact.subtitle"></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p><span data-i18n="footer.built_by">Designed &amp; built by Yahia</span> · 2026</p>
+    </footer>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

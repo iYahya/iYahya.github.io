@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من أنا",
+    "skills": "المهارات",
+    "experience": "الخبرة",
+    "projects": "المشاريع",
+    "education": "التعليم",
+    "contact": "تواصل"
+  },
+  "hero": {
+    "greeting": "مرحباً، أنا",
+    "name": "يحيى",
+    "title": "مطور React Native وتطبيقات الجوال",
+    "subtitle": "+8 سنوات · +30 تطبيق منشور · App Store و Google Play",
+    "cta_primary": "شوف شغلي ↓",
+    "cta_secondary": "تحميل السيرة الذاتية"
+  },
+  "about": {
+    "section_title": "من أنا",
+    "bio": "مطور React Native وتطبيقات الجوال بأكثر من 8 سنوات خبرة في بناء وإطلاق تطبيقات احترافية. أعمل حالياً في Alyomhost و Inspire Studio بالمنصورة — أكثر من 30 تطبيق على App Store و Google Play. خلفيتي في أمن المعلومات تمنحني عقلية أمنية أطبقها في كل مشروع. أنا أيضاً شريك في تأسيس وإدارة Valeria Skin Care، مما يمنحني مزيجاً نادراً بين العمق التقني وفهم الأعمال."
+  },
+  "skills": {
+    "section_title": "المهارات"
+  },
+  "experience": {
+    "section_title": "الخبرة"
+  },
+  "projects": {
+    "section_title": "المشاريع"
+  },
+  "education": {
+    "section_title": "التعليم"
+  },
+  "contact": {
+    "section_title": "خليني نعمل حاجة مع بعض",
+    "subtitle": "متاح لأدوار React Native أو Front-End Senior، مشاريع فريلانس، وتعاونات تقنية."
+  },
+  "footer": {
+    "built_by": "صمم وبنى يحيى"
+  },
+  "controls": {
+    "download_cv": "تحميل السيرة الذاتية"
+  }
+}

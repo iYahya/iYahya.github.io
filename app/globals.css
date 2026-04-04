@@ -14,9 +14,9 @@
   --text-muted: #555570;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   --nav-bg: rgba(10, 10, 15, 0.85);
-  --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-display: "Syne", var(--font-sans);
-  --font-ar: "Cairo", var(--font-sans);
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-display: var(--font-syne), var(--font-sans);
+  --font-ar: var(--font-cairo), var(--font-sans);
 }
 
 [data-theme="light"] {
@@ -672,6 +672,17 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.25rem;
+  align-items: stretch;
+}
+
+.project-card-wrap {
+  display: flex;
+  min-width: 0;
+}
+
+.project-card-wrap .project-card {
+  flex: 1;
+  width: 100%;
 }
 
 .project-card {

@@ -1,87 +1,43 @@
 # Portfolio — Yahia
 
-Static personal portfolio for **Yahia** (React Native & front-end developer). Live on **GitHub Pages** at [iYahya.github.io](https://iYahya.github.io/).
+Personal portfolio built with **Next.js** (App Router, static export). Bilingual **English** (`/`) and **Arabic** (`/ar`) with RTL, plus light/dark theme.
 
-## What this repo is
+Live site: [iYahya.github.io](https://iYahya.github.io/)
 
-- **Fully static** — no backend.
-- **Bilingual** — English and Arabic with RTL.
-- **Theming** — system preference plus manual light/dark toggle, persisted in `localStorage`.
+## Scripts
 
-## Stack
-
-| Area | Choice | Why |
-|------|--------|-----|
-| Markup / behavior | HTML, CSS, vanilla JS | No build step; works on GitHub Pages |
-| Styling | Custom CSS + variables | Full control, small footprint |
-| Copy | `translations/en.json`, `translations/ar.json` | No i18n library |
-| Theme | `data-theme` on `<html>` + CSS variables | Predictable, easy to persist |
-| RTL | `dir` / `lang` on `<html>` + `[dir="rtl"]` overrides | Scoped layout fixes |
-| Fonts (EN) | Syne, DM Sans (Google Fonts) | Distinctive display + body |
-| Fonts (AR) | Cairo | Arabic + RTL |
-| Icons | Inline SVG | No icon font/CDN dependency |
-| Motion | CSS keyframes + `IntersectionObserver` | No animation framework |
-
-## Repo layout
-
-```
-/
-├── index.html
-├── style.css
-├── script.js
-├── translations/
-│   ├── en.json
-│   └── ar.json
-├── assets/
-│   ├── profile.jpg      # your photo
-│   ├── cv-yahia.pdf     # your CV
-│   └── og-image.png     # 1200×630 Open Graph image
-└── README.md
+```bash
+npm install
+npm run dev      # http://localhost:3000 — English at /, Arabic at /ar
+npm run build    # static export → out/
+npm run start    # serve production build (after next build without export, optional)
 ```
 
-Use **relative** asset paths (e.g. `./assets/cv-yahia.pdf`) so GitHub Pages resolves them correctly.
+For GitHub Pages, deploy the **`out/`** directory (see below).
 
-**Local preview:** Serve the project over HTTP (for example `npx --yes serve .` from the repo root) so the browser can load `translations/*.json` via `fetch`; opening `index.html` as a `file://` URL will not load translations in most browsers.
+## Project layout
 
-## Implementation phases
+```
+app/
+  layout.tsx      # fonts (next/font), metadata, theme script
+  page.tsx        # English home
+  ar/page.tsx     # Arabic home
+  globals.css     # all styles
+components/       # Portfolio, nav, timeline, projects, etc.
+hooks/            # useInViewOnce
+lib/              # messages + types
+messages/         # en.json, ar.json (copy)
+public/assets/    # profile.jpg, cv-yahia.pdf, og-image.png
+```
 
-1. **Setup** — Folders, fonts, CSS variables for both themes, anti-flash theme script in `<head>`, translation files, meta/OG tags, favicon (`YH`).
-2. **Global systems** — Theme toggle, language toggle, RTL, navbar control order: logo, nav links, EN|AR, sun/moon, Download CV.
-3. **Sections** (build in order): nav → hero → about → skills → experience → projects → education → contact → footer.
-4. **Polish** — Scroll animations, reduced-motion support, hover states.
-5. **Responsive** — Breakpoints: &lt;480px, 480–768px, 768–1024px, &gt;1024px; `clamp` for hero type; grids as in plan.
-6. **Deploy** — Push to `main`, enable Pages from repo root, smoke-test toggles and links.
-7. **QA** — Checklist: i18n/RTL, theme persistence, no theme flash, nav scroll spy, CV link, filters, mobile menu.
+## GitHub Pages
 
-## Design tokens (dark default)
+`next.config.ts` uses `output: "export"` so `npm run build` produces static files in **`out/`**.
 
-Dark and light themes map to the same variable names; light overrides live under `[data-theme="light"]`. Core tokens include `--bg-primary`, `--bg-secondary`, `--bg-card`, `--border`, `--accent`, `--accent-secondary`, `--text-primary`, `--text-secondary`, `--text-muted`, `--shadow`, `--nav-bg`.
+In the repo **Settings → Pages**: set the source to **GitHub Actions** and use a workflow that uploads `out`, or publish the `out` folder contents to the branch GitHub expects for your username site (`iYahya.github.io`).
 
-Anti-flash: run a small inline script in `<head>` **before** the stylesheet — read `localStorage('theme')`, else `prefers-color-scheme`, then set `data-theme` on `<documentElement>`.
+If the site is served from a **project** repo (not `username.github.io`), set `basePath` in `next.config.ts` to `/<repo-name>` and `assetPrefix` accordingly, then rebuild.
 
-## Section content (summary)
+## Content
 
-- **Hero** — Greeting, name, title, stats line, primary/secondary CTAs, mesh-style background, scroll cue.
-- **About** — Two columns (flip in RTL), bio (EN/AR), stat cards: apps, years, companies.
-- **Skills** — Categories: Mobile, Frontend, State & data, Backend & cloud, DevOps & tools, Security — with badges and scroll-in animation.
-- **Experience** — Timeline: Inspire Studio (React Native), Alyomhost (front-end/mobile); current roles in Mansoura.
-- **Projects** — Filter tabs (All / Mobile / Web / Brand); cards with stack pills and links where available.
-- **Education** — MIS (Delta Academy), Information Security diploma (Mansoura University).
-- **Contact** — Headline + subtext; email, LinkedIn, GitHub, location; links open in a new tab; no form.
-
-## Translation keys (groups)
-
-Structure your JSON under namespaces such as: `nav`, `hero`, `about`, `skills`, `experience`, `projects`, `education`, `contact`, `footer`, `controls` (theme, language, download CV). Keep HTML free of user-visible hardcoded strings; load strings from the active locale file.
-
-## Before going live
-
-Replace placeholders:
-
-- Email, LinkedIn, GitHub URLs  
-- `assets/profile.jpg`, `assets/cv-yahia.pdf`, `assets/og-image.png`  
-- App Store / Play links for shipped apps; live URLs where applicable  
-- `<username>` in deploy URL with your GitHub username  
-
-## License / credits
-
-Designed and built by Yahia · Mansoura, Egypt.
+Edit `messages/en.json` and `messages/ar.json`. Replace contact placeholders and add files under `public/assets/`.

@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Yahia",
+    "title": "React Native &amp; Front-End Developer",
+    "subtitle": "8+ years · 30+ Published Apps · App Store &amp; Google Play",
+    "cta_primary": "View My Work ↓",
+    "cta_secondary": "Download CV"
+  },
+  "about": {
+    "section_title": "About",
+    "bio": "React Native and Front-End Developer with 8+ years of experience building and shipping production-grade mobile apps. Currently at Alyomhost and Inspire Studio in Mansoura — 30+ apps delivered to App Store and Google Play. My Information Security background gives me a security-conscious mindset I bring to every codebase. I also co-own and operate Valeria Skin Care, a cosmetics brand — a rare combination of technical depth and real-world business understanding."
+  },
+  "skills": {
+    "section_title": "Skills"
+  },
+  "experience": {
+    "section_title": "Experience"
+  },
+  "projects": {
+    "section_title": "Projects"
+  },
+  "education": {
+    "section_title": "Education"
+  },
+  "contact": {
+    "section_title": "Let's Build Something Great",
+    "subtitle": "Open to senior React Native / Front-End roles, freelance projects, and technical collaborations."
+  },
+  "footer": {
+    "built_by": "Designed &amp; built by Yahia"
+  },
+  "controls": {
+    "download_cv": "Download CV"
+  }
+}

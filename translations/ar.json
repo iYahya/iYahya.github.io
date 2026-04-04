@@ -14,30 +14,165 @@
     "title": "مطور React Native وتطبيقات الجوال",
     "subtitle": "+8 سنوات · +30 تطبيق منشور · App Store و Google Play",
     "cta_primary": "شوف شغلي ↓",
-    "cta_secondary": "تحميل السيرة الذاتية"
+    "cta_secondary": "تحميل السيرة الذاتية",
+    "scroll_aria": "انتقل لقسم من أنا"
   },
   "about": {
     "section_title": "من أنا",
-    "bio": "مطور React Native وتطبيقات الجوال بأكثر من 8 سنوات خبرة في بناء وإطلاق تطبيقات احترافية. أعمل حالياً في Alyomhost و Inspire Studio بالمنصورة — أكثر من 30 تطبيق على App Store و Google Play. خلفيتي في أمن المعلومات تمنحني عقلية أمنية أطبقها في كل مشروع. أنا أيضاً شريك في تأسيس وإدارة Valeria Skin Care، مما يمنحني مزيجاً نادراً بين العمق التقني وفهم الأعمال."
+    "bio": "مطور React Native وتطبيقات الجوال بأكثر من 8 سنوات خبرة في بناء وإطلاق تطبيقات احترافية. أعمل حالياً في Alyomhost و Inspire Studio بالمنصورة — أكثر من 30 تطبيق على App Store و Google Play. خلفيتي في أمن المعلومات تمنحني عقلية أمنية أطبقها في كل مشروع. أنا أيضاً شريك في تأسيس وإدارة Valeria Skin Care، مما يمنحني مزيجاً نادراً بين العمق التقني وفهم الأعمال.",
+    "stat_apps": "تطبيق منشور",
+    "stat_years": "سنوات خبرة",
+    "stat_companies": "شركة",
+    "photo_alt": "صورة يحيى"
   },
   "skills": {
-    "section_title": "المهارات"
+    "section_title": "المهارات",
+    "categories": [
+      {
+        "title": "موبايل",
+        "items": ["React Native", "Expo", "iOS", "Android"]
+      },
+      {
+        "title": "فرونت إند",
+        "items": ["TypeScript", "JavaScript", "React.js", "Next.js", "HTML5", "CSS3"]
+      },
+      {
+        "title": "State وبيانات",
+        "items": ["Zustand", "Redux Toolkit", "TanStack Query", "Context API"]
+      },
+      {
+        "title": "باك إند وكلاود",
+        "items": ["AWS", "Node.js", "REST API", "GraphQL"]
+      },
+      {
+        "title": "DevOps وأدوات",
+        "items": ["CI/CD", "GitHub Actions", "Fastlane", "Git", "Xcode", "Android Studio"]
+      },
+      {
+        "title": "أمن معلومات",
+        "items": ["Information Security", "OWASP", "Secure coding"]
+      }
+    ]
   },
   "experience": {
-    "section_title": "الخبرة"
+    "section_title": "الخبرة",
+    "current": "حالياً",
+    "jobs": [
+      {
+        "role": "مطور React Native",
+        "company": "Inspire Studio",
+        "meta": "المنصورة، مصر",
+        "bullets": [
+          "بناء تطبيقات موبايل متعددة المنصات (iOS و Android) باستخدام React Native و Expo.",
+          "تصميم هيكل مجلدات قائم على الميزات لقواعد كود قابلة للتوسع.",
+          "دمج إشعارات الدفع (FCM)، رفع الملفات، وواجهات طرف ثالث.",
+          "تسليم كامل مع مصممي واجهات وتجربة المستخدم وفريق الباك إند."
+        ]
+      },
+      {
+        "role": "مطور فرونت إند / موبايل",
+        "company": "Alyomhost",
+        "meta": "المنصورة، مصر",
+        "bullets": [
+          "تطوير وصيانة منتجات ويب وموبايل للعملاء.",
+          "إدارة دورات الإصدار والنشر على App Store و Google Play.",
+          "إعداد خطوط CI/CD باستخدام GitHub Actions و Fastlane."
+        ]
+      }
+    ]
   },
   "projects": {
-    "section_title": "المشاريع"
+    "section_title": "المشاريع",
+    "filter_all": "الكل",
+    "filter_mobile": "موبايل",
+    "filter_web": "ويب",
+    "filter_brand": "براند",
+    "live": "معاينة",
+    "code": "GitHub",
+    "stores": "المتاجر",
+    "items": [
+      {
+        "name": "Valeria App",
+        "cat": "mobile",
+        "desc": "تجارة إلكترونية — كتالوج، سلة، وطلبات.",
+        "stack": "React Native, Expo, TypeScript, REST",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "FleetRider",
+        "cat": "mobile",
+        "desc": "إدارة أساطيل مع طبقة API حسب الميزات.",
+        "stack": "React Native, TypeScript, TanStack Query",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Linkify.sa",
+        "cat": "web",
+        "desc": "منصة تسويقية على استضافة LiteSpeed.",
+        "stack": "React, Vite, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "ترقية بنية React Native",
+        "cat": "mobile",
+        "desc": "ترحيل React Native 0.75.4 → 0.84.0 والبنية الجديدة.",
+        "stack": "React Native, Hermes, JSI, Fabric",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "إشعارات Expo",
+        "cat": "mobile",
+        "desc": "تكامل FCM كامل — أذونات، أيقونات، ومعالجات.",
+        "stack": "Expo, FCM, React Native",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Valeria Skin Care",
+        "cat": "brand",
+        "desc": "علامة تجميل مشارك في تأسيسها — عمليات ونقاط رقمية.",
+        "stack": "E-commerce, Brand, Operations",
+        "live": "",
+        "github": ""
+      }
+    ]
   },
   "education": {
-    "section_title": "التعليم"
+    "section_title": "التعليم",
+    "degrees": [
+      {
+        "title": "بكالوريوس نظم معلومات إدارية",
+        "school": "أكاديمية الدلتا، المنصورة"
+      },
+      {
+        "title": "دبلوم أمن المعلومات",
+        "school": "جامعة المنصورة"
+      }
+    ]
   },
   "contact": {
     "section_title": "خليني نعمل حاجة مع بعض",
-    "subtitle": "متاح لأدوار React Native أو Front-End Senior، مشاريع فريلانس، وتعاونات تقنية."
+    "subtitle": "متاح لأدوار React Native أو Front-End Senior، مشاريع فريلانس، وتعاونات تقنية.",
+    "email_label": "البريد",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
+    "location_label": "الموقع",
+    "email_href": "mailto:hello@example.com",
+    "email_text": "hello@example.com",
+    "linkedin_href": "https://linkedin.com/in/yourprofile",
+    "github_href": "https://github.com/iYahya",
+    "location": "المنصورة، مصر",
+    "open_to": "متاح عن بُعد أو الانتقال"
   },
   "footer": {
-    "built_by": "صمم وبنى يحيى"
+    "built_by": "صمم وبنى يحيى",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "البريد"
   },
   "controls": {
     "download_cv": "تحميل السيرة الذاتية"

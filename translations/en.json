@@ -14,30 +14,165 @@
     "title": "React Native &amp; Front-End Developer",
     "subtitle": "8+ years · 30+ Published Apps · App Store &amp; Google Play",
     "cta_primary": "View My Work ↓",
-    "cta_secondary": "Download CV"
+    "cta_secondary": "Download CV",
+    "scroll_aria": "Scroll to about"
   },
   "about": {
     "section_title": "About",
-    "bio": "React Native and Front-End Developer with 8+ years of experience building and shipping production-grade mobile apps. Currently at Alyomhost and Inspire Studio in Mansoura — 30+ apps delivered to App Store and Google Play. My Information Security background gives me a security-conscious mindset I bring to every codebase. I also co-own and operate Valeria Skin Care, a cosmetics brand — a rare combination of technical depth and real-world business understanding."
+    "bio": "React Native and Front-End Developer with 8+ years of experience building and shipping production-grade mobile apps. Currently at Alyomhost and Inspire Studio in Mansoura — 30+ apps delivered to App Store and Google Play. My Information Security background gives me a security-conscious mindset I bring to every codebase. I also co-own and operate Valeria Skin Care, a cosmetics brand — a rare combination of technical depth and real-world business understanding.",
+    "stat_apps": "Apps published",
+    "stat_years": "Years experience",
+    "stat_companies": "Companies",
+    "photo_alt": "Portrait of Yahia"
   },
   "skills": {
-    "section_title": "Skills"
+    "section_title": "Skills",
+    "categories": [
+      {
+        "title": "Mobile",
+        "items": ["React Native", "Expo", "iOS", "Android"]
+      },
+      {
+        "title": "Frontend",
+        "items": ["TypeScript", "JavaScript", "React.js", "Next.js", "HTML5", "CSS3"]
+      },
+      {
+        "title": "State &amp; data",
+        "items": ["Zustand", "Redux Toolkit", "TanStack Query", "Context API"]
+      },
+      {
+        "title": "Backend &amp; cloud",
+        "items": ["AWS", "Node.js", "REST API", "GraphQL"]
+      },
+      {
+        "title": "DevOps &amp; tools",
+        "items": ["CI/CD", "GitHub Actions", "Fastlane", "Git", "Xcode", "Android Studio"]
+      },
+      {
+        "title": "Security",
+        "items": ["Information Security", "OWASP", "Secure coding"]
+      }
+    ]
   },
   "experience": {
-    "section_title": "Experience"
+    "section_title": "Experience",
+    "current": "Current",
+    "jobs": [
+      {
+        "role": "React Native Developer",
+        "company": "Inspire Studio",
+        "meta": "Mansoura, Egypt",
+        "bullets": [
+          "Built cross-platform mobile apps (iOS &amp; Android) with React Native and Expo.",
+          "Architected feature-based folder structures for scalable codebases.",
+          "Integrated push notifications (FCM), file uploads, and third-party APIs.",
+          "Delivered end-to-end alongside UI/UX designers and backend teams."
+        ]
+      },
+      {
+        "role": "Front-End / Mobile Developer",
+        "company": "Alyomhost",
+        "meta": "Mansoura, Egypt",
+        "bullets": [
+          "Developed and maintained client web and mobile products.",
+          "Managed App Store and Google Play submission and release cycles.",
+          "Set up CI/CD with GitHub Actions and Fastlane."
+        ]
+      }
+    ]
   },
   "projects": {
-    "section_title": "Projects"
+    "section_title": "Projects",
+    "filter_all": "All",
+    "filter_mobile": "Mobile",
+    "filter_web": "Web",
+    "filter_brand": "Brand",
+    "live": "Live",
+    "code": "GitHub",
+    "stores": "App stores",
+    "items": [
+      {
+        "name": "Valeria App",
+        "cat": "mobile",
+        "desc": "E-commerce — catalog, cart, and orders.",
+        "stack": "React Native, Expo, TypeScript, REST",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "FleetRider",
+        "cat": "mobile",
+        "desc": "Fleet management with a feature-based API layer.",
+        "stack": "React Native, TypeScript, TanStack Query",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Linkify.sa",
+        "cat": "web",
+        "desc": "Marketing platform hosted on LiteSpeed.",
+        "stack": "React, Vite, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "RN architecture upgrade",
+        "cat": "mobile",
+        "desc": "Migration React Native 0.75.4 → 0.84.0, New Architecture.",
+        "stack": "React Native, Hermes, JSI, Fabric",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Expo push notifications",
+        "cat": "mobile",
+        "desc": "Full FCM integration — permissions, icons, and handlers.",
+        "stack": "Expo, FCM, React Native",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Valeria Skin Care",
+        "cat": "brand",
+        "desc": "Co-owned cosmetics brand — operations and digital touchpoints.",
+        "stack": "E-commerce, Brand, Operations",
+        "live": "",
+        "github": ""
+      }
+    ]
   },
   "education": {
-    "section_title": "Education"
+    "section_title": "Education",
+    "degrees": [
+      {
+        "title": "BA in Management Information Systems",
+        "school": "Delta Academy, Mansoura"
+      },
+      {
+        "title": "Diploma in Information Security",
+        "school": "Mansoura University"
+      }
+    ]
   },
   "contact": {
-    "section_title": "Let's Build Something Great",
-    "subtitle": "Open to senior React Native / Front-End roles, freelance projects, and technical collaborations."
+    "section_title": "Let's build something great",
+    "subtitle": "Open to senior React Native / front-end roles, freelance projects, and technical collaborations.",
+    "email_label": "Email",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
+    "location_label": "Location",
+    "email_href": "mailto:hello@example.com",
+    "email_text": "hello@example.com",
+    "linkedin_href": "https://linkedin.com/in/yourprofile",
+    "github_href": "https://github.com/iYahya",
+    "location": "Mansoura, Egypt",
+    "open_to": "Open to remote / relocation"
   },
   "footer": {
-    "built_by": "Designed &amp; built by Yahia"
+    "built_by": "Designed &amp; built by Yahia",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   },
   "controls": {
     "download_cv": "Download CV"

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "clean": "rm -rf .next out",
+    "start": "serve out -l 3000",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.16.0",
     "eslint-config-next": "^15.1.0",
+    "serve": "^14.2.6",
     "typescript": "^5.7.0"
   }
 }

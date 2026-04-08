@@ -27,7 +27,7 @@ components/       # Portfolio, nav, timeline, projects, etc.
 hooks/            # useInViewOnce
 lib/              # messages + types
 messages/         # en.json, ar.json (copy)
-public/assets/    # profile.jpg, cv-yahia.pdf, og-image.png
+public/assets/    # profile.png, og-image.png (CV via email — see Portfolio)
 ```
 
 ## GitHub Pages

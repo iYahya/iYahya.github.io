@@ -7,7 +7,7 @@ import { SectionAnimate } from "@/components/SectionAnimate";
 import type { Messages } from "@/lib/types";
 
 export function ProjectGrid({ projects }: { projects: Messages["projects"] }) {
-  const [filter, setFilter] = useState<"all" | "mobile" | "web" | "brand">("all");
+  const [filter, setFilter] = useState<"all" | "mobile" | "web">("all");
 
   const visible = useMemo(() => {
     if (filter === "all") return projects.items;
@@ -16,10 +16,11 @@ export function ProjectGrid({ projects }: { projects: Messages["projects"] }) {
 
   return (
     <>
-      <div className="project-filters" role="tablist" aria-label="Project categories">
+      <div className="project-filters" role="group" aria-label="Project categories">
         <button
           type="button"
           className={`project-filter${filter === "all" ? " is-active" : ""}`}
+          aria-pressed={filter === "all"}
           onClick={() => setFilter("all")}
         >
           {projects.filter_all}
@@ -27,6 +28,7 @@ export function ProjectGrid({ projects }: { projects: Messages["projects"] }) {
         <button
           type="button"
           className={`project-filter${filter === "mobile" ? " is-active" : ""}`}
+          aria-pressed={filter === "mobile"}
           onClick={() => setFilter("mobile")}
         >
           {projects.filter_mobile}
@@ -34,16 +36,10 @@ export function ProjectGrid({ projects }: { projects: Messages["projects"] }) {
         <button
           type="button"
           className={`project-filter${filter === "web" ? " is-active" : ""}`}
+          aria-pressed={filter === "web"}
           onClick={() => setFilter("web")}
         >
           {projects.filter_web}
-        </button>
-        <button
-          type="button"
-          className={`project-filter${filter === "brand" ? " is-active" : ""}`}
-          onClick={() => setFilter("brand")}
-        >
-          {projects.filter_brand}
         </button>
       </div>
       <div className="projects-grid">

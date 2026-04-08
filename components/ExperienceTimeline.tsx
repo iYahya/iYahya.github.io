@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import type { Messages } from "@/lib/types";
 
-function TimelineItem({ job, current }: { job: Messages["experience"]["jobs"][0]; current: string }) {
+function TimelineItem({ job }: { job: Messages["experience"]["jobs"][0] }) {
   const { ref, visible } = useInViewOnce<HTMLLIElement>();
   return (
     <li ref={ref} className={`timeline-item section-animate${visible ? " is-visible" : ""}`.trim()}>
@@ -15,7 +15,7 @@ function TimelineItem({ job, current }: { job: Messages["experience"]["jobs"][0]
           <h3>{job.role}</h3>
           <p className="timeline-company">{job.company}</p>
           <p className="timeline-meta">
-            {job.meta} · {current}
+            {job.meta} · {job.period}
           </p>
         </header>
         <ul className="timeline-bullets" role="list">
@@ -54,10 +54,9 @@ export function ExperienceTimeline({ experience }: { experience: Messages["exper
 
   return (
     <div ref={rootRef} className={`timeline${lineVisible ? " is-line-visible" : ""}`}>
-      <div className="timeline-line" aria-hidden />
       <ul className="timeline-list" role="list">
         {experience.jobs.map((job) => (
-          <TimelineItem key={job.company + job.role} job={job} current={experience.current} />
+          <TimelineItem key={`${job.company}-${job.role}-${job.period}`} job={job} />
         ))}
       </ul>
     </div>

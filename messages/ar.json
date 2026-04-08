@@ -1,180 +1,261 @@
 {
   "nav": {
+    "menu_open": "فتح القائمة",
+    "menu_close": "إغلاق القائمة",
     "home": "الرئيسية",
     "about": "من أنا",
-    "skills": "المهارات",
     "experience": "الخبرة",
     "projects": "المشاريع",
-    "education": "التعليم",
+    "contributions": "GitHub",
     "contact": "تواصل"
   },
   "hero": {
     "greeting": "مرحباً، أنا",
-    "name": "يحيى",
-    "title": "مطور React Native وتطبيقات الجوال",
-    "subtitle": "+8 سنوات · +30 تطبيق منشور · App Store و Google Play",
+    "name": "يحيى زكريا",
+    "title": "مطور React Native وتطبيقات الويب",
+    "subtitle": "+8 سنوات · +30 تطبيقاً منشوراً · App Store و Google Play",
     "cta_primary": "شوف شغلي ↓",
-    "cta_secondary": "تحميل السيرة الذاتية",
+    "cta_secondary": "اطلب السيرة بالبريد",
     "scroll_aria": "انتقل لقسم من أنا"
   },
   "about": {
     "section_title": "من أنا",
-    "bio": "مطور React Native وتطبيقات الجوال بأكثر من 8 سنوات خبرة في بناء وإطلاق تطبيقات احترافية. أعمل حالياً في Alyomhost و Inspire Studio بالمنصورة — أكثر من 30 تطبيق على App Store و Google Play. خلفيتي في أمن المعلومات تمنحني عقلية أمنية أطبقها في كل مشروع. أنا أيضاً شريك في تأسيس وإدارة Valeria Skin Care، مما يمنحني مزيجاً نادراً بين العمق التقني وفهم الأعمال.",
-    "stat_apps": "تطبيق منشور",
+    "bio": "مطور React Native وتطبيقات الويب بأكثر من 8 سنوات في بناء تطبيقات موبايل وويب عالية الأداء. أركز على التطوير متعدد المنصات باستخدام React Native وExpo، وإدارة الحالة الحديثة (Zustand وRedux Toolkit)، وتخزين حالة الخادم عبر TanStack Query. قدتُ تسليم أكثر من 30 تطبيقاً إنتاجياً في Alyomhost وأعمل حالياً في Inspire Studio — والشركتان شركات منتجات سعودية. دبلومي في أمن المعلومات يشكّل طريقة تفكيري في الكود الآمن والقابل للصيانة.",
+    "stat_apps": "تطبيق مُسلَّم",
     "stat_years": "سنوات خبرة",
     "stat_companies": "شركة",
-    "photo_alt": "صورة يحيى"
+    "photo_alt": "صورة يحيى زكريا"
   },
   "skills": {
     "section_title": "المهارات",
+    "show_more": "عرض كل المجموعات",
+    "show_less": "عرض أقل",
     "categories": [
       {
         "title": "موبايل",
-        "items": ["React Native", "Expo", "iOS", "Android"]
+        "items": ["React Native CLI", "Expo", "React Navigation", "Native modules", "Google Maps SDK", "Mapbox"]
       },
       {
-        "title": "فرونت إند",
-        "items": ["TypeScript", "JavaScript", "React.js", "Next.js", "HTML5", "CSS3"]
+        "title": "واجهات",
+        "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Next.js"]
       },
       {
-        "title": "State وبيانات",
-        "items": ["Zustand", "Redux Toolkit", "TanStack Query", "Context API"]
+        "title": "إدارة الحالة",
+        "items": ["Redux", "Redux Toolkit", "Zustand", "Context API"]
       },
       {
-        "title": "باك إند وكلاود",
-        "items": ["AWS", "Node.js", "REST API", "GraphQL"]
+        "title": "بيانات وواجهات برمجية",
+        "items": ["TanStack Query", "REST APIs", "Axios", "WebSockets"]
       },
       {
-        "title": "DevOps وأدوات",
-        "items": ["CI/CD", "GitHub Actions", "Fastlane", "Git", "Xcode", "Android Studio"]
+        "title": "سحابة وDevOps",
+        "items": ["AWS", "Firebase", "Git", "GitHub", "CI/CD"]
       },
       {
-        "title": "أمن معلومات",
-        "items": ["Information Security", "OWASP", "Secure coding"]
+        "title": "أدوات التطوير",
+        "items": ["Xcode", "Android Studio", "VS Code"]
       }
     ]
   },
   "experience": {
     "section_title": "الخبرة",
-    "current": "حالياً",
     "jobs": [
       {
         "role": "مطور React Native",
         "company": "Inspire Studio",
-        "meta": "المنصورة، مصر",
+        "meta": "شركة سعودية",
+        "period": "مايو 2025 – حتى الآن",
         "bullets": [
-          "بناء تطبيقات موبايل متعددة المنصات (iOS و Android) باستخدام React Native و Expo.",
-          "تصميم هيكل مجلدات قائم على الميزات لقواعد كود قابلة للتوسع.",
-          "دمج إشعارات الدفع (FCM)، رفع الملفات، وواجهات طرف ثالث.",
-          "تسليم كامل مع مصممي واجهات وتجربة المستخدم وفريق الباك إند."
+          "قيادة تطوير تطبيقات متعددة المنصات بـ React Native CLI وExpo لأداء قوي على Android وiOS.",
+          "تنفيذ ميزات فورية عبر WebSockets وFirebase لتحسين التفاعل ومزامنة البيانات.",
+          "دمج Google Maps SDK وMapbox لتجارب تعتمد على الموقع لعدة منتجات عملاء."
         ]
       },
       {
-        "role": "مطور فرونت إند / موبايل",
+        "role": "مطور React Native",
         "company": "Alyomhost",
-        "meta": "المنصورة، مصر",
+        "meta": "شركة سعودية",
+        "period": "سبتمبر 2019 – أبريل 2025",
         "bullets": [
-          "تطوير وصيانة منتجات ويب وموبايل للعملاء.",
-          "إدارة دورات الإصدار والنشر على App Store و Google Play.",
-          "إعداد خطوط CI/CD باستخدام GitHub Actions و Fastlane."
+          "قيادة تسليم أكثر من 30 تطبيقاً موبايل؛ تحسين الأداء عبر كود React Native محسّن وتكاملات أصلية.",
+          "تقليل زمن التحميل وتحسين التجربة عبر تقسيم الكود، التحميل الكسول، وTanStack Query لحالة الخادم.",
+          "توسيع إدارة الحالة بـ Zustand وRedux Toolkit؛ استخدام Expo لتسريع دورات الإصدار.",
+          "ترحيل قواعد كود أصلية قديمة إلى React Native مع الحفاظ على تقييم 4.5+ في App Store.",
+          "دمج بوابات الدفع، الخرائط، وواجهات البيانات اللحظية من البداية للنهاية."
+        ]
+      },
+      {
+        "role": "مطور واجهات أمامية",
+        "company": "Alyomhost",
+        "meta": "شركة سعودية",
+        "period": "سبتمبر 2016 – أغسطس 2019",
+        "bullets": [
+          "بناء وصيانة أكثر من 15 موقعاً إنتاجياً بـ HTML5 وCSS3 وJavaScript.",
+          "تسليم تصاميم متجاوبة وتقليل أوقات التحميل عبر تحسينات أداء على الواجهة.",
+          "إنشاء أنماط مكوّنات قابلة لإعادة الاستخدام والمساعدة في ترحيل واجهات قديمة إلى React."
         ]
       }
     ]
   },
   "projects": {
-    "section_title": "المشاريع",
+    "section_title": "أبرز الأعمال",
     "filter_all": "الكل",
     "filter_mobile": "موبايل",
     "filter_web": "ويب",
-    "filter_brand": "براند",
     "live": "معاينة",
     "code": "GitHub",
     "stores": "المتاجر",
     "items": [
       {
-        "name": "Valeria App",
-        "cat": "mobile",
-        "desc": "تجارة إلكترونية — كتالوج، سلة، وطلبات.",
-        "stack": "React Native, Expo, TypeScript, REST",
-        "live": "",
-        "github": ""
-      },
-      {
-        "name": "FleetRider",
-        "cat": "mobile",
-        "desc": "إدارة أساطيل مع طبقة API حسب الميزات.",
-        "stack": "React Native, TypeScript, TanStack Query",
-        "live": "",
-        "github": ""
-      },
-      {
-        "name": "Linkify.sa",
+        "name": "Linkify",
         "cat": "web",
-        "desc": "منصة تسويقية على استضافة LiteSpeed.",
-        "stack": "React, Vite, TypeScript",
-        "live": "",
+        "desc": "منصة تربط العملاء والشركات بالمستقلين — احتراف يعملون باستقلالية وعملاء يصلون لكفاءات موثوقة.",
+        "stack": "React.js, JavaScript, REST",
+        "live": "https://linkify.sa",
         "github": ""
       },
       {
-        "name": "ترقية بنية React Native",
+        "name": "Bin Yaala Exchange",
         "cat": "mobile",
-        "desc": "ترحيل React Native 0.75.4 → 0.84.0 والبنية الجديدة.",
-        "stack": "React Native, Hermes, JSI, Fabric",
+        "desc": "تحويل أموال وصرف دولي — إرسال آمن وبأسعار تنافسية.",
+        "stack": "React Native, Expo, TypeScript",
         "live": "",
         "github": ""
       },
       {
-        "name": "إشعارات Expo",
+        "name": "Yaqeen",
         "cat": "mobile",
-        "desc": "تكامل FCM كامل — أذونات، أيقونات، ومعالجات.",
-        "stack": "Expo, FCM, React Native",
+        "desc": "منصة لمواد تعليمية للطلاب والمتعلمين.",
+        "stack": "React Native, TypeScript",
         "live": "",
         "github": ""
       },
       {
-        "name": "Valeria Skin Care",
-        "cat": "brand",
-        "desc": "علامة تجميل مشارك في تأسيسها — عمليات ونقاط رقمية.",
-        "stack": "E-commerce, Brand, Operations",
+        "name": "Construction Costs",
+        "cat": "mobile",
+        "desc": "متابعة تكاليف البناء من التصميم حتى التسليم.",
+        "stack": "React Native, REST APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Al Yasser",
+        "cat": "mobile",
+        "desc": "مبيعات استيراد وتوزيع للأدوات المنزلية.",
+        "stack": "React Native, Expo",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Qwalab Arabia",
+        "cat": "mobile",
+        "desc": "مجتمع كتابة إبداعية لروايات وقصص وسيناريوهات.",
+        "stack": "React Native, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Table — Reservation",
+        "cat": "mobile",
+        "desc": "حجوزات ومطاعم ومقاهي — إدارة الطاولات.",
+        "stack": "React Native, Firebase",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Table — Restaurant",
+        "cat": "mobile",
+        "desc": "عرض وإدارة منتجات المطعم بشكل منظم.",
+        "stack": "React Native, REST APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Fossha School",
+        "cat": "mobile",
+        "desc": "بدل المدرسية — ربط محفظة ولي الأمر بسوار الطالب لمشتريات الكانتين بدون كاش.",
+        "stack": "React Native, Expo, Firebase",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "ProPal",
+        "cat": "mobile",
+        "desc": "حجز رياضي — الوصول لمرافق وخدمات متنوعة.",
+        "stack": "React Native, Maps SDK",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Abdulaziz Building Materials",
+        "cat": "mobile",
+        "desc": "مواد بناء وطلبات لعملاء في السعودية.",
+        "stack": "React Native, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Sitr",
+        "cat": "mobile",
+        "desc": "تجارة إلكترونية على الموبايل.",
+        "stack": "React Native, Payment APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Rehlaty",
+        "cat": "mobile",
+        "desc": "عرض وإيجار تجارب ترفيه وسياحة.",
+        "stack": "React Native, TypeScript",
         "live": "",
         "github": ""
       }
     ]
+  },
+  "contributed": {
+    "section_title": "مستودعات GitHub",
+    "subtitle": "مستودعات عامة على حسابي — بما فيها الفوركات والتجارب. يمكن إدراج مشاريع مجتمعية أساهم فيها يدوياً هنا أيضاً.",
+    "fork_badge": "نسخة",
+    "stars_label": "نجوم",
+    "extra": []
   },
   "education": {
     "section_title": "التعليم",
     "degrees": [
       {
-        "title": "بكالوريوس نظم معلومات إدارية",
-        "school": "أكاديمية الدلتا، المنصورة"
+        "title": "دبلوم أمن المعلومات",
+        "school": "مصر · 2018 – 2019"
       },
       {
-        "title": "دبلوم أمن المعلومات",
-        "school": "جامعة المنصورة"
+        "title": "بكالوريوس نظم معلومات إدارية",
+        "school": "أكاديمية الدلتا · 2013 – 2017"
       }
     ]
   },
   "contact": {
     "section_title": "خليني نعمل حاجة مع بعض",
-    "subtitle": "متاح لأدوار React Native أو Front-End Senior، مشاريع فريلانس، وتعاونات تقنية.",
+    "subtitle": "متاح لأدوار React Native أو واجهات أمامية senior، عمل فريلانس، وتعاون تقني. <span class=\"contact-hint\">عادةً أرد خلال يومي عمل تقريباً.</span>",
     "email_label": "البريد",
+    "phone_label": "الهاتف",
     "linkedin_label": "LinkedIn",
     "github_label": "GitHub",
     "location_label": "الموقع",
-    "email_href": "mailto:hello@example.com",
-    "email_text": "hello@example.com",
-    "linkedin_href": "https://linkedin.com/in/yourprofile",
+    "email_href": "mailto:yahya.elgohary95@gmail.com",
+    "email_text": "yahya.elgohary95@gmail.com",
+    "phone_href": "tel:+201021342133",
+    "phone_text": "+20 102 134 2133",
+    "linkedin_href": "https://www.linkedin.com/in/yahyael-gohary",
     "github_href": "https://github.com/iYahya",
-    "location": "المنصورة، مصر",
+    "location": "مصر",
     "open_to": "متاح عن بُعد أو الانتقال"
   },
   "footer": {
-    "built_by": "صمم وبنى يحيى",
+    "built_by": "صمم وبنى يحيى زكريا",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "البريد"
   },
   "controls": {
-    "download_cv": "تحميل السيرة الذاتية"
+    "download_cv": "اطلب السيرة بالبريد"
   }
 }

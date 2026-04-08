@@ -3,24 +3,63 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { LocaleRoot } from "@/components/LocaleRoot";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { SectionAnimate } from "@/components/SectionAnimate";
-import type { Locale, Messages } from "@/lib/types";
+import { ContributedReposSection } from "@/components/ContributedReposSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import type { ContributedRepo, Locale, Messages } from "@/lib/types";
 
 const THEME_KEY = "theme";
-const SECTION_IDS = ["hero", "about", "skills", "experience", "projects", "education", "contact"] as const;
 
-export function Portfolio({ locale, messages }: { locale: Locale; messages: Messages }) {
+/** Nav omits Skills/Education links; highlight About while user is in those sections. */
+const NAV_CORE = [
+  ["#hero", "home"],
+  ["#about", "about"],
+  ["#experience", "experience"],
+  ["#projects", "projects"],
+] as const;
+
+const ABOUT_SECTION_GROUP = new Set<string>(["about", "skills", "education"]);
+
+function isNavLinkActive(activeId: string, linkSectionId: string) {
+  if (linkSectionId === "hero") return activeId === "hero";
+  if (linkSectionId === "about") return ABOUT_SECTION_GROUP.has(activeId);
+  return activeId === linkSectionId;
+}
+
+function cvRequestMailtoHref(emailHref: string, subject: string) {
+  const addr = emailHref.replace(/^mailto:/i, "").trim();
+  return `mailto:${addr}?subject=${encodeURIComponent(subject)}`;
+}
+
+export function Portfolio({
+  locale,
+  messages,
+  contributedRepos = [],
+}: {
+  locale: Locale;
+  messages: Messages;
+  contributedRepos?: ContributedRepo[];
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [photoFallback, setPhotoFallback] = useState(false);
   const [activeId, setActiveId] = useState<string>("hero");
   const navSpyObserver = useRef<IntersectionObserver | null>(null);
   const scrollHandler = useRef<(() => void) | null>(null);
+
+  const cvMailtoHref = useMemo(
+    () =>
+      cvRequestMailtoHref(
+        messages.contact.email_href,
+        locale === "ar" ? "طلب السيرة الذاتية" : "CV request"
+      ),
+    [locale, messages.contact.email_href]
+  );
 
   useEffect(() => {
     const onScroll = () => setHeaderScrolled(window.scrollY > 24);
@@ -30,7 +69,20 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
   }, []);
 
   useEffect(() => {
-    const sections: HTMLElement[] = SECTION_IDS.map((id) => document.getElementById(id)).filter(
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const ids =
+      contributedRepos.length > 0
+        ? ["hero", "about", "skills", "experience", "projects", "contributions", "education", "contact"]
+        : ["hero", "about", "skills", "experience", "projects", "education", "contact"];
+    const sections: HTMLElement[] = ids.map((id) => document.getElementById(id)).filter(
       (el): el is HTMLElement => el !== null
     );
     if (!sections.length) return;
@@ -75,7 +127,7 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
       navSpyObserver.current?.disconnect();
       if (scrollHandler.current) window.removeEventListener("scroll", scrollHandler.current);
     };
-  }, [locale, messages]);
+  }, [locale, messages, contributedRepos.length]);
 
   function toggleTheme() {
     const root = document.documentElement;
@@ -95,23 +147,18 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
             {"{ YH }"}
           </a>
           <ul className={`nav-links${mobileOpen ? " is-open" : ""}`} id="nav-links">
-            {(
-              [
-                ["#hero", messages.nav.home],
-                ["#about", messages.nav.about],
-                ["#skills", messages.nav.skills],
-                ["#experience", messages.nav.experience],
-                ["#projects", messages.nav.projects],
-                ["#education", messages.nav.education],
-                ["#contact", messages.nav.contact],
-              ] as const
-            ).map(([href, label]) => {
+            {[
+              ...NAV_CORE,
+              ...(contributedRepos.length > 0 ? ([["#contributions", "contributions"]] as const) : []),
+              ["#contact", "contact"] as const,
+            ].map(([href, navKey]) => {
               const id = href.slice(1);
+              const label = messages.nav[navKey] ?? navKey;
               return (
                 <li key={href}>
                   <a
                     href={href}
-                    className={activeId === id ? "is-active" : undefined}
+                    className={isNavLinkActive(activeId, id) ? "is-active" : undefined}
                     onClick={() => setMobileOpen(false)}
                     dangerouslySetInnerHTML={{ __html: label }}
                   />
@@ -136,14 +183,14 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
                 ☽
               </span>
             </button>
-            <a className="btn btn-ghost nav-cv" href="/assets/cv-yahia.pdf" download dangerouslySetInnerHTML={{ __html: messages.controls.download_cv }} />
+            <a className="btn btn-ghost nav-cv" href={cvMailtoHref} dangerouslySetInnerHTML={{ __html: messages.controls.download_cv }} />
           </div>
           <button
             type="button"
             className="nav-toggle"
             aria-expanded={mobileOpen}
             aria-controls="nav-links"
-            aria-label="Open menu"
+            aria-label={mobileOpen ? messages.nav.menu_close : messages.nav.menu_open}
             onClick={() => setMobileOpen((o) => !o)}
           >
             <span />
@@ -164,7 +211,7 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
             <p className="hero-subtitle hero-reveal" style={{ "--d": "240ms" } as CSSProperties} dangerouslySetInnerHTML={{ __html: messages.hero.subtitle }} />
             <div className="hero-cta hero-reveal" style={{ "--d": "320ms" } as CSSProperties}>
               <a className="btn btn-primary" href="#projects" dangerouslySetInnerHTML={{ __html: messages.hero.cta_primary }} />
-              <a className="btn btn-outline" href="/assets/cv-yahia.pdf" download dangerouslySetInnerHTML={{ __html: messages.hero.cta_secondary }} />
+              <a className="btn btn-outline" href={cvMailtoHref} dangerouslySetInnerHTML={{ __html: messages.hero.cta_secondary }} />
             </div>
           </div>
           <a className="hero-scroll" href="#about" aria-label={messages.hero.scroll_aria}>
@@ -180,7 +227,7 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
                 {!photoFallback ? (
                   <Image
                     className="about-photo"
-                    src="/assets/profile.jpg"
+                    src="/assets/profile.png"
                     alt={messages.about.photo_alt}
                     width={320}
                     height={320}
@@ -215,22 +262,7 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
 
         <section id="skills" className="section" aria-labelledby="skills-title">
           <h2 id="skills-title" className="section-title section-accent" dangerouslySetInnerHTML={{ __html: messages.skills.section_title }} />
-          <div className="skills-root" aria-live="polite">
-            {messages.skills.categories.map((cat, ci) => (
-              <SectionAnimate key={cat.title} className="skill-category-wrap">
-                <div className="skill-category" style={{ "--cat": ci } as CSSProperties}>
-                  <h3 className="skill-category-title">{cat.title}</h3>
-                  <ul className="skill-badges" role="list">
-                    {cat.items.map((item, ii) => (
-                      <li key={item} className="skill-badge" style={{ "--i": ii } as React.CSSProperties}>
-                        <span className="skill-badge-inner">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </SectionAnimate>
-            ))}
-          </div>
+          <SkillsSection skills={messages.skills} />
         </section>
 
         <section id="experience" className="section" aria-labelledby="experience-title">
@@ -242,6 +274,8 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
           <h2 id="projects-title" className="section-title section-accent" dangerouslySetInnerHTML={{ __html: messages.projects.section_title }} />
           <ProjectGrid projects={messages.projects} />
         </section>
+
+        <ContributedReposSection messages={messages.contributed} repos={contributedRepos} />
 
         <section id="education" className="section" aria-labelledby="education-title">
           <h2 id="education-title" className="section-title section-accent" dangerouslySetInnerHTML={{ __html: messages.education.section_title }} />
@@ -264,6 +298,10 @@ export function Portfolio({ locale, messages }: { locale: Locale; messages: Mess
             <a className="contact-card" href={messages.contact.email_href}>
               <span className="contact-card-label">{messages.contact.email_label}</span>
               <span className="contact-card-value">{messages.contact.email_text}</span>
+            </a>
+            <a className="contact-card" href={messages.contact.phone_href}>
+              <span className="contact-card-label">{messages.contact.phone_label}</span>
+              <span className="contact-card-value">{messages.contact.phone_text}</span>
             </a>
             <a className="contact-card" href={messages.contact.linkedin_href} target="_blank" rel="noopener noreferrer">
               <span className="contact-card-label">{messages.contact.linkedin_label}</span>

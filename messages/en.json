@@ -1,180 +1,261 @@
 {
   "nav": {
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
     "home": "Home",
     "about": "About",
-    "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
-    "education": "Education",
+    "contributions": "GitHub",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "Yahia",
+    "name": "Yahya Zakaria",
     "title": "React Native &amp; Front-End Developer",
-    "subtitle": "8+ years · 30+ Published Apps · App Store &amp; Google Play",
+    "subtitle": "8+ years · 30+ shipped apps · App Store &amp; Google Play",
     "cta_primary": "View My Work ↓",
-    "cta_secondary": "Download CV",
+    "cta_secondary": "Request CV",
     "scroll_aria": "Scroll to about"
   },
   "about": {
     "section_title": "About",
-    "bio": "React Native and Front-End Developer with 8+ years of experience building and shipping production-grade mobile apps. Currently at Alyomhost and Inspire Studio in Mansoura — 30+ apps delivered to App Store and Google Play. My Information Security background gives me a security-conscious mindset I bring to every codebase. I also co-own and operate Valeria Skin Care, a cosmetics brand — a rare combination of technical depth and real-world business understanding.",
-    "stat_apps": "Apps published",
+    "bio": "React Native and Front-End developer with 8+ years of experience building high-performance mobile and web applications. I focus on cross-platform delivery with React Native and Expo, modern state management (Zustand, Redux Toolkit), and server-state caching with TanStack Query. I’ve shipped 30+ production apps at Alyomhost and now work at Inspire Studio — both are Saudi-based product companies. My Diploma in Information Security shapes how I think about secure, maintainable code.",
+    "stat_apps": "Apps shipped",
     "stat_years": "Years experience",
     "stat_companies": "Companies",
-    "photo_alt": "Portrait of Yahia"
+    "photo_alt": "Portrait of Yahya Zakaria"
   },
   "skills": {
     "section_title": "Skills",
+    "show_more": "Show all skill groups",
+    "show_less": "Show fewer",
     "categories": [
       {
         "title": "Mobile",
-        "items": ["React Native", "Expo", "iOS", "Android"]
+        "items": ["React Native CLI", "Expo", "React Navigation", "Native modules", "Google Maps SDK", "Mapbox"]
       },
       {
         "title": "Frontend",
-        "items": ["TypeScript", "JavaScript", "React.js", "Next.js", "HTML5", "CSS3"]
+        "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Next.js"]
       },
       {
-        "title": "State &amp; data",
-        "items": ["Zustand", "Redux Toolkit", "TanStack Query", "Context API"]
+        "title": "State management",
+        "items": ["Redux", "Redux Toolkit", "Zustand", "Context API"]
       },
       {
-        "title": "Backend &amp; cloud",
-        "items": ["AWS", "Node.js", "REST API", "GraphQL"]
+        "title": "Data &amp; APIs",
+        "items": ["TanStack Query", "REST APIs", "Axios", "WebSockets"]
       },
       {
-        "title": "DevOps &amp; tools",
-        "items": ["CI/CD", "GitHub Actions", "Fastlane", "Git", "Xcode", "Android Studio"]
+        "title": "Cloud &amp; DevOps",
+        "items": ["AWS", "Firebase", "Git", "GitHub", "CI/CD"]
       },
       {
-        "title": "Security",
-        "items": ["Information Security", "OWASP", "Secure coding"]
+        "title": "Dev tools",
+        "items": ["Xcode", "Android Studio", "VS Code"]
       }
     ]
   },
   "experience": {
     "section_title": "Experience",
-    "current": "Current",
     "jobs": [
       {
         "role": "React Native Developer",
         "company": "Inspire Studio",
-        "meta": "Mansoura, Egypt",
+        "meta": "Saudi-based company",
+        "period": "May 2025 – Present",
         "bullets": [
-          "Built cross-platform mobile apps (iOS &amp; Android) with React Native and Expo.",
-          "Architected feature-based folder structures for scalable codebases.",
-          "Integrated push notifications (FCM), file uploads, and third-party APIs.",
-          "Delivered end-to-end alongside UI/UX designers and backend teams."
+          "Lead development of cross-platform apps with React Native CLI and Expo for strong performance on Android and iOS.",
+          "Ship real-time features with WebSockets and Firebase to improve engagement and data sync.",
+          "Integrate Google Maps SDK and Mapbox for location-based experiences across client products."
         ]
       },
       {
-        "role": "Front-End / Mobile Developer",
+        "role": "React Native Developer",
         "company": "Alyomhost",
-        "meta": "Mansoura, Egypt",
+        "meta": "Saudi-based company",
+        "period": "Sep 2019 – Apr 2025",
         "bullets": [
-          "Developed and maintained client web and mobile products.",
-          "Managed App Store and Google Play submission and release cycles.",
-          "Set up CI/CD with GitHub Actions and Fastlane."
+          "Led delivery of 30+ mobile apps; improved performance through optimized React Native code and native integrations.",
+          "Cut load and improved UX with code-splitting, lazy loading, and TanStack Query for server state.",
+          "Scaled state with Zustand and Redux Toolkit; used Expo to speed up release cycles.",
+          "Migrated legacy native codebases to React Native while keeping a 4.5+ App Store rating.",
+          "Integrated payments, mapping, and real-time data APIs end to end."
+        ]
+      },
+      {
+        "role": "Front-End Developer",
+        "company": "Alyomhost",
+        "meta": "Saudi-based company",
+        "period": "Sep 2016 – Aug 2019",
+        "bullets": [
+          "Built and maintained 15+ production websites with HTML5, CSS3, and JavaScript.",
+          "Delivered responsive layouts and cut load times through performance-focused front-end work.",
+          "Created reusable component patterns and helped migrate legacy front ends to React."
         ]
       }
     ]
   },
   "projects": {
-    "section_title": "Projects",
+    "section_title": "Featured work",
     "filter_all": "All",
     "filter_mobile": "Mobile",
     "filter_web": "Web",
-    "filter_brand": "Brand",
     "live": "Live",
     "code": "GitHub",
     "stores": "App stores",
     "items": [
       {
-        "name": "Valeria App",
-        "cat": "mobile",
-        "desc": "E-commerce — catalog, cart, and orders.",
-        "stack": "React Native, Expo, TypeScript, REST",
-        "live": "",
-        "github": ""
-      },
-      {
-        "name": "FleetRider",
-        "cat": "mobile",
-        "desc": "Fleet management with a feature-based API layer.",
-        "stack": "React Native, TypeScript, TanStack Query",
-        "live": "",
-        "github": ""
-      },
-      {
-        "name": "Linkify.sa",
+        "name": "Linkify",
         "cat": "web",
-        "desc": "Marketing platform hosted on LiteSpeed.",
-        "stack": "React, Vite, TypeScript",
-        "live": "",
+        "desc": "Platform connecting clients and companies with freelancers — professionals work independently while clients access vetted talent.",
+        "stack": "React.js, JavaScript, REST",
+        "live": "https://linkify.sa",
         "github": ""
       },
       {
-        "name": "RN architecture upgrade",
+        "name": "Bin Yaala Exchange",
         "cat": "mobile",
-        "desc": "Migration React Native 0.75.4 → 0.84.0, New Architecture.",
-        "stack": "React Native, Hermes, JSI, Fabric",
+        "desc": "International money transfer and exchange — send money abroad securely at competitive rates.",
+        "stack": "React Native, Expo, TypeScript",
         "live": "",
         "github": ""
       },
       {
-        "name": "Expo push notifications",
+        "name": "Yaqeen",
         "cat": "mobile",
-        "desc": "Full FCM integration — permissions, icons, and handlers.",
-        "stack": "Expo, FCM, React Native",
+        "desc": "Online access to educational materials for students and learners.",
+        "stack": "React Native, TypeScript",
         "live": "",
         "github": ""
       },
       {
-        "name": "Valeria Skin Care",
-        "cat": "brand",
-        "desc": "Co-owned cosmetics brand — operations and digital touchpoints.",
-        "stack": "E-commerce, Brand, Operations",
+        "name": "Construction Costs",
+        "cat": "mobile",
+        "desc": "Track construction spend from design through completion.",
+        "stack": "React Native, REST APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Al Yasser",
+        "cat": "mobile",
+        "desc": "Import and distribution sales for household products.",
+        "stack": "React Native, Expo",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Qwalab Arabia",
+        "cat": "mobile",
+        "desc": "Creative writing community for novels, stories, and scripts.",
+        "stack": "React Native, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Table — Reservation",
+        "cat": "mobile",
+        "desc": "Restaurant and café reservations and table management.",
+        "stack": "React Native, Firebase",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Table — Restaurant",
+        "cat": "mobile",
+        "desc": "Showcase and manage restaurant products in a structured storefront.",
+        "stack": "React Native, REST APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Fossha School",
+        "cat": "mobile",
+        "desc": "School allowance app linking parent e-wallet to student wristband for cashless canteen use.",
+        "stack": "React Native, Expo, Firebase",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "ProPal",
+        "cat": "mobile",
+        "desc": "Sports booking — discover and book facilities and services.",
+        "stack": "React Native, Maps SDK",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Abdulaziz Building Materials",
+        "cat": "mobile",
+        "desc": "Building materials catalog and ordering for Saudi Arabia.",
+        "stack": "React Native, TypeScript",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Sitr",
+        "cat": "mobile",
+        "desc": "E-commerce mobile experience.",
+        "stack": "React Native, Payment APIs",
+        "live": "",
+        "github": ""
+      },
+      {
+        "name": "Rehlaty",
+        "cat": "mobile",
+        "desc": "Showcase and rent entertainment and tourism experiences.",
+        "stack": "React Native, TypeScript",
         "live": "",
         "github": ""
       }
     ]
+  },
+  "contributed": {
+    "section_title": "GitHub repositories",
+    "subtitle": "Public repositories on my GitHub — including forks and experiments. Community repos I contribute to can be listed here as well.",
+    "fork_badge": "Fork",
+    "stars_label": "Stars",
+    "extra": []
   },
   "education": {
     "section_title": "Education",
     "degrees": [
       {
-        "title": "BA in Management Information Systems",
-        "school": "Delta Academy, Mansoura"
+        "title": "Diploma in Information Security",
+        "school": "Egypt · 2018 – 2019"
       },
       {
-        "title": "Diploma in Information Security",
-        "school": "Mansoura University"
+        "title": "BA in Management Information Systems",
+        "school": "Delta Academy · 2013 – 2017"
       }
     ]
   },
   "contact": {
     "section_title": "Let's build something great",
-    "subtitle": "Open to senior React Native / front-end roles, freelance projects, and technical collaborations.",
+    "subtitle": "Open to senior React Native / front-end roles, freelance work, and technical collaborations. <span class=\"contact-hint\">I typically reply within a couple of business days.</span>",
     "email_label": "Email",
+    "phone_label": "Phone",
     "linkedin_label": "LinkedIn",
     "github_label": "GitHub",
     "location_label": "Location",
-    "email_href": "mailto:hello@example.com",
-    "email_text": "hello@example.com",
-    "linkedin_href": "https://linkedin.com/in/yourprofile",
+    "email_href": "mailto:yahya.elgohary95@gmail.com",
+    "email_text": "yahya.elgohary95@gmail.com",
+    "phone_href": "tel:+201021342133",
+    "phone_text": "+20 102 134 2133",
+    "linkedin_href": "https://www.linkedin.com/in/yahyael-gohary",
     "github_href": "https://github.com/iYahya",
-    "location": "Mansoura, Egypt",
+    "location": "Egypt",
     "open_to": "Open to remote / relocation"
   },
   "footer": {
-    "built_by": "Designed &amp; built by Yahia",
+    "built_by": "Designed &amp; built by Yahya Zakaria",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "Email"
   },
   "controls": {
-    "download_cv": "Download CV"
+    "download_cv": "Request CV"
   }
 }

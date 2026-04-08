@@ -28,16 +28,16 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iyahya.github.io"),
-  title: "Yahia — React Native & Front-End Developer",
+  title: "Yahya Zakaria — React Native & Front-End Developer",
   description:
-    "React Native and front-end developer. 8+ years, 30+ published apps. Based in Mansoura, Egypt.",
+    "React Native and front-end developer. 8+ years, 30+ shipped apps. Egypt. yahya.elgohary95@gmail.com",
   openGraph: {
-    title: "Yahia — Portfolio",
-    description: "React Native and front-end developer portfolio.",
+    title: "Yahya Zakaria — Portfolio",
+    description: "React Native and front-end developer — mobile, web, and cross-platform delivery.",
     images: [{ url: "/assets/og-image.png" }],
   },
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='20' font-family='system-ui,sans-serif' fill='%2300d4ff'%3EYH%3C/text%3E%3C/svg%3E",
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='20' font-family='system-ui,sans-serif' fill='%23d4a574'%3EYH%3C/text%3E%3C/svg%3E",
   },
 };
 

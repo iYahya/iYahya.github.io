@@ -1,39 +1,39 @@
-/* Default (dark) */
+/* Default (dark) — warm charcoal + single gold accent (distinct from cyan/purple “AI dev” stack) */
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #111118;
-  --bg-card: #16161f;
-  --bg-card-hover: #1c1c28;
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(255, 255, 255, 0.14);
-  --accent: #00d4ff;
-  --accent-glow: rgba(0, 212, 255, 0.15);
-  --accent-secondary: #7928ca;
-  --text-primary: #f0f0f5;
-  --text-secondary: #8888aa;
-  --text-muted: #555570;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --nav-bg: rgba(10, 10, 15, 0.85);
+  --bg-primary: #12110f;
+  --bg-secondary: #1a1815;
+  --bg-card: #211e1a;
+  --bg-card-hover: #2a2621;
+  --border: rgba(255, 248, 240, 0.08);
+  --border-hover: rgba(255, 248, 240, 0.16);
+  --accent: #d4a574;
+  --accent-glow: rgba(212, 165, 116, 0.12);
+  --accent-secondary: #8b6f4e;
+  --text-primary: #f5f2eb;
+  --text-secondary: #a8a095;
+  --text-muted: #6d675c;
+  --shadow: 0 4px 28px rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(18, 17, 15, 0.92);
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-display: var(--font-syne), var(--font-sans);
   --font-ar: var(--font-cairo), var(--font-sans);
 }
 
 [data-theme="light"] {
-  --bg-primary: #f8f8fc;
-  --bg-secondary: #f0f0f8;
+  --bg-primary: #faf7f2;
+  --bg-secondary: #f0ebe3;
   --bg-card: #ffffff;
-  --bg-card-hover: #f5f5ff;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
-  --accent: #0099cc;
-  --accent-glow: rgba(0, 153, 204, 0.12);
-  --accent-secondary: #6015a8;
-  --text-primary: #0f0f1a;
-  --text-secondary: #555570;
-  --text-muted: #9999bb;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --nav-bg: rgba(248, 248, 252, 0.85);
+  --bg-card-hover: #f5f0e8;
+  --border: rgba(40, 35, 30, 0.1);
+  --border-hover: rgba(40, 35, 30, 0.18);
+  --accent: #9a6b35;
+  --accent-glow: rgba(154, 107, 53, 0.12);
+  --accent-secondary: #6b5344;
+  --text-primary: #1c1814;
+  --text-secondary: #5c554c;
+  --text-muted: #8a8278;
+  --shadow: 0 4px 24px rgba(28, 24, 20, 0.08);
+  --nav-bg: rgba(250, 247, 242, 0.92);
 }
 
 *,
@@ -55,6 +55,19 @@ body {
   background-color: var(--bg-primary);
 }
 
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline-offset: 3px;
+}
+
 [lang="ar"] body,
 [lang="ar"] h1,
 [lang="ar"] h2,
@@ -74,7 +87,7 @@ body {
   z-index: 100;
   padding: 0.5rem 1rem;
   background: var(--accent);
-  color: var(--bg-primary);
+  color: #1a1510;
 }
 
 .skip-link:focus {
@@ -87,7 +100,7 @@ body {
   top: 0;
   z-index: 50;
   background: var(--nav-bg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -203,7 +216,7 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--bg-primary);
+  color: #1a1510;
 }
 
 .btn-outline {
@@ -249,8 +262,8 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: start;
-  background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(121, 40, 202, 0.2), transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 60%, rgba(0, 212, 255, 0.12), transparent 45%),
+  background: radial-gradient(ellipse 130% 90% at 15% -5%, rgba(212, 165, 116, 0.11), transparent 55%),
+    radial-gradient(ellipse 85% 65% at 100% 45%, rgba(139, 111, 78, 0.07), transparent 52%),
     var(--bg-primary);
 }
 
@@ -324,15 +337,9 @@ body {
   }
 }
 
-@keyframes mesh-shift {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1) translate(0, 0);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.05) translate(2%, -1%);
+@media (prefers-reduced-motion: no-preference) {
+  .hero-reveal {
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
@@ -341,20 +348,20 @@ body {
   overflow: hidden;
 }
 
+/* Static wash only — no looping mesh motion (quieter first screen). */
 .hero::before {
   content: "";
   position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 30% 40%, rgba(0, 212, 255, 0.18), transparent 45%),
-    radial-gradient(circle at 70% 60%, rgba(121, 40, 202, 0.22), transparent 40%);
-  animation: mesh-shift 14s ease-in-out infinite;
+  inset: -15%;
+  background: radial-gradient(circle at 28% 38%, rgba(212, 165, 116, 0.05), transparent 48%),
+    radial-gradient(circle at 72% 62%, rgba(107, 83, 68, 0.09), transparent 44%);
   pointer-events: none;
   z-index: 0;
 }
 
 [data-theme="light"] .hero::before {
-  background: radial-gradient(circle at 30% 40%, rgba(0, 153, 204, 0.12), transparent 45%),
-    radial-gradient(circle at 70% 60%, rgba(96, 21, 168, 0.1), transparent 40%);
+  background: radial-gradient(circle at 28% 38%, rgba(154, 107, 53, 0.05), transparent 48%),
+    radial-gradient(circle at 72% 62%, rgba(107, 83, 68, 0.06), transparent 44%);
 }
 
 .hero-inner {
@@ -410,7 +417,7 @@ body {
 .section-animate {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-animate.is-visible {
@@ -490,7 +497,7 @@ body {
 
 .about-stat:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 0 0 1px var(--accent-glow);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .about-stat-value {
@@ -510,6 +517,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.skills-expand-btn {
+  margin-top: 1.5rem;
+}
+
+.contact-lead .contact-hint {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
 }
 
 .skill-category-title {
@@ -549,31 +568,16 @@ body {
 .skill-badge:hover .skill-badge-inner {
   border-color: var(--accent);
   color: var(--text-primary);
-  box-shadow: 0 0 20px var(--accent-glow);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 .timeline {
   position: relative;
-  padding-inline-start: 1.5rem;
-}
-
-.timeline-line {
-  position: absolute;
-  inset-inline-start: 0.4rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: transform 0.8s ease;
-}
-
-.timeline.is-line-visible .timeline-line {
-  transform: scaleY(1);
+  padding-inline-start: 0;
 }
 
 .timeline-list {
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -582,24 +586,51 @@ body {
   gap: 1.5rem;
 }
 
+/* Single vertical rail: line shares the same 2rem column as dots (no offset math). */
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(1rem - 1px);
+  top: 0.65rem;
+  bottom: 0.65rem;
+  width: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.timeline.is-line-visible .timeline-list::before {
+  transform: scaleY(1);
+}
+
 .timeline-item {
   position: relative;
-  padding-inline-start: 1.25rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-inline-start: 0;
 }
 
 .timeline-dot {
-  position: absolute;
-  inset-inline-start: -0.35rem;
-  top: 0.35rem;
+  position: relative;
+  justify-self: center;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--bg-primary);
   border: 2px solid var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-glow);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .timeline-card {
+  grid-column: 2;
+  min-width: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -706,7 +737,7 @@ body {
 .project-card:hover .project-card-inner {
   transform: translateY(-4px);
   border-color: var(--accent);
-  box-shadow: 0 12px 40px var(--accent-glow);
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--bg-primary) 88%, var(--accent) 12%);
 }
 
 .project-badge {
@@ -767,6 +798,102 @@ body {
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+.contributions-lead {
+  max-width: 48rem;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.repo-card-wrap {
+  display: flex;
+  min-width: 0;
+}
+
+.repo-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--bg-primary) 88%, var(--accent) 12%);
+}
+
+.repo-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+}
+
+.repo-card-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  word-break: break-word;
+}
+
+.repo-fork-badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+}
+
+.repo-card-desc {
+  margin: 0;
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.repo-card-desc--muted {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.repo-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.repo-lang {
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.repo-stars {
+  font-variant-numeric: tabular-nums;
 }
 
 .education-grid {
@@ -960,16 +1087,13 @@ body {
     animation: none;
   }
 
-  .hero::before {
-    animation: none;
-  }
-
   .section-animate {
     opacity: 1;
     transform: none;
   }
 
-  .timeline-line {
+  .timeline-list::before {
     transform: scaleY(1);
+    transition: none;
   }
 }

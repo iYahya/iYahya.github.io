@@ -34,7 +34,7 @@ public/assets/    # profile.png, og-image.png (CV via email — see Portfolio)
 
 `next.config.ts` uses `output: "export"` so `npm run build` produces static files in **`out/`**.
 
-In the repo **Settings → Pages**: set the source to **GitHub Actions** and use a workflow that uploads `out`, or publish the `out` folder contents to the branch GitHub expects for your username site (`iYahya.github.io`).
+In the repo **Settings → Pages**: set the source to **GitHub Actions**. This repo uses `.github/workflows/nextjs.yml` to upload and deploy the static `out` artifact.
 
 If the site is served from a **project** repo (not `username.github.io`), set `basePath` in `next.config.ts` to `/<repo-name>` and `assetPrefix` accordingly, then rebuild.
 
